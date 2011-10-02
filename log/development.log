@@ -4420,3 +4420,1074 @@ Processing UsersController#show (for 127.0.0.1 at 2011-09-18 20:42:56) [GET]
 Rendering template within layouts/application
 Rendering users/show
 Completed in 64ms (View: 7, DB: 40) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-09-26 19:42:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 70ms (View: 16, DB: 20) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-09-26 20:04:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 4, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-09-26 20:16:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 31ms (View: 16, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-09-26 20:17:11) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"faille", "email"=>"acockerham@gmail.com"}}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (7.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'acockerham@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'faille') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '982f338a0360837897c3efe59af03e02738ace0dc4677d6125c678ed1e485c6c917c57742de4498335c0dde71c7e57cf8f0baeb5bc64c252174528c685d1edbb') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '9BG7yiX7GIVLlU8BHX6Y') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.0ms)
+Completed in 9539ms (View: 9, DB: 10) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2011-09-26 20:19:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 4, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2011-09-26 20:19:47) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"faille"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'faille') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:19:47', `perishable_token` = 'KTRt5w8pQfv2VM12dy', `last_login_at` = '2011-09-19 03:42:56', `last_login_ip` = '127.0.0.1', `current_login_at` = '2011-09-27 03:19:47', `login_count` = 2, `last_request_at` = '2011-09-27 03:19:47' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 149ms (DB: 10) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-09-26 20:19:47) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (9.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:19:48', `perishable_token` = 'ZpZwQbPxNCUng5ejUHsH', `last_request_at` = '2011-09-27 03:19:48' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 85ms (View: 7, DB: 18) | 200 OK [http://localhost/account]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:19:56) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:19:56', `perishable_token` = 'Bh5g1arqTMn3UW6ZAjbw', `last_request_at` = '2011-09-27 03:19:56' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.0ms)
+Completed in 41ms (View: 10, DB: 10) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:46:00) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:46:00', `perishable_token` = 'SGtiRXb1jMNXNNNqDrEu', `last_request_at` = '2011-09-27 03:46:00' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.0ms)
+Completed in 35ms (View: 9, DB: 10) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:46:14) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:46:14', `perishable_token` = '7JDEl5anx2invg7eKfM', `last_request_at` = '2011-09-27 03:46:14' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for => "user_email"} ; @output_buffer.concat " Email\n  "
+                ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edit My Account</h1>\n\n"
+
+;  form_for @user, :url => account_path do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  "
+;  label{:for => "user_email"} ; @output_buffer.concat " Email\n  "
+; @output_buffer.concat(( render :partial => "form", :object => f ).to_s); @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.submit "Update" ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n<br />"
+
+; @output_buffer.concat(( link_to "My Profile", account_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:13:in `compile!'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:61:in `compile'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:28:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/template.rb:205:in `render_template'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:265:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:348:in `_render_with_layout'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:262:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1252:in `render_for_file'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:936:in `render_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1328:in `default_render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/session/cookie_store.rb:99:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:114:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/reloader.rb:34:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:108:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/static.rb:31:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/log_tailer.rb:17:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/commands/server.rb:111
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for => "user_email"} ; @output_buffer.concat " Email\n  "
+                ^) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <% label{:for => "user_email"} %> Email
+6:   <%= render :partial => "form", :object => f %>
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:13:in `compile!'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:47:16) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:47:16', `perishable_token` = 'aAvFDknr59y0Ib0G5q6', `last_request_at` = '2011-09-27 03:47:16' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for => "user_email"} Email = f.passw...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...el{:for => "user_email"} Email = f.password_field :password ...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...{:for => "user_email"} Email = f.password_field :password ; ...
+                              ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edit My Account</h1>\n\n"
+
+;  form_for @user, :url => account_path do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  "
+;  label{:for => "user_email"} Email = f.password_field :password ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( render :partial => "form", :object => f ).to_s); @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.submit "Update" ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n<br />"
+
+; @output_buffer.concat(( link_to "My Profile", account_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:13:in `compile!'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:61:in `compile'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:28:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/template.rb:205:in `render_template'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:265:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:348:in `_render_with_layout'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:262:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1252:in `render_for_file'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:936:in `render_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1328:in `default_render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/session/cookie_store.rb:99:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:114:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/reloader.rb:34:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:108:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/static.rb:31:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/log_tailer.rb:17:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/commands/server.rb:111
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for => "user_email"} Email = f.passw...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...el{:for => "user_email"} Email = f.password_field :password ...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...{:for => "user_email"} Email = f.password_field :password ; ...
+                              ^) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <% label{:for => "user_email"} Email = f.password_field :password %>
+6:   <%= render :partial => "form", :object => f %>
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:13:in `compile!'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:47:27) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:47:27', `perishable_token` = 'E0NMTrf8Q9MmuAgfTG8k', `last_request_at` = '2011-09-27 03:47:27' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for =>"user_email"} Email = f.passwo...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...bel{:for =>"user_email"} Email = f.password_field :password ...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...l{:for =>"user_email"} Email = f.password_field :password ; ...
+                              ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edit My Account</h1>\n\n"
+
+;  form_for @user, :url => account_path do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  "
+;  label{:for =>"user_email"} Email = f.password_field :password ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( render :partial => "form", :object => f ).to_s); @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.submit "Update" ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n<br />"
+
+; @output_buffer.concat(( link_to "My Profile", account_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:13:in `compile!'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:61:in `compile'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:28:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/template.rb:205:in `render_template'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:265:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:348:in `_render_with_layout'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:262:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1252:in `render_for_file'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:936:in `render_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1328:in `default_render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/session/cookie_store.rb:99:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:114:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/reloader.rb:34:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:108:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/static.rb:31:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/log_tailer.rb:17:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/commands/server.rb:111
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for =>"user_email"} Email = f.passwo...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...bel{:for =>"user_email"} Email = f.password_field :password ...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...l{:for =>"user_email"} Email = f.password_field :password ; ...
+                              ^) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <% label{:for =>"user_email"} Email = f.password_field :password %>
+6:   <%= render :partial => "form", :object => f %>
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:13:in `compile!'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:50:41) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:50:41', `perishable_token` = 'l2szFDoCoQHh3UH5eCP5', `last_request_at` = '2011-09-27 03:50:41' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for =>"user_email"} Email = f.passwo...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...bel{:for =>"user_email"} Email = f.password_field :password ...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...l{:for =>"user_email"} Email = f.password_field :password ; ...
+                              ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edit My Account</h1>\n\n"
+
+;  form_for @user, :url => account_path do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  "
+;  label{:for =>"user_email"} Email = f.password_field :password ; @output_buffer.concat "\n  <!-- "
+; @output_buffer.concat(( render :partial => "form", :object => f ).to_s); @output_buffer.concat " -->\n  "
+; @output_buffer.concat(( f.submit "Update" ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n<br />"
+
+; @output_buffer.concat(( link_to "My Profile", account_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:13:in `compile!'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:61:in `compile'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:28:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/template.rb:205:in `render_template'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:265:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:348:in `_render_with_layout'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:262:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1252:in `render_for_file'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:936:in `render_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1328:in `default_render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/session/cookie_store.rb:99:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:114:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/reloader.rb:34:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:108:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/static.rb:31:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/log_tailer.rb:17:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/commands/server.rb:111
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for =>"user_email"} Email = f.passwo...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...bel{:for =>"user_email"} Email = f.password_field :password ...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...l{:for =>"user_email"} Email = f.password_field :password ; ...
+                              ^) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <% label{:for =>"user_email"} Email = f.password_field :password %>
+6:   <!-- <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:13:in `compile!'
+
+Rendered rescues/_trace (73.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:51:18) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:51:18', `perishable_token` = 'lE0gSJecQVjbS1vtk8vK', `last_request_at` = '2011-09-27 03:51:18' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for =>"user_email"} Email = f.user_e...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...bel{:for =>"user_email"} Email = f.user_email :email ; @outp...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...l{:for =>"user_email"} Email = f.user_email :email ; @output...
+                              ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edit My Account</h1>\n\n"
+
+;  form_for @user, :url => account_path do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  "
+;  label{:for =>"user_email"} Email = f.user_email :email ; @output_buffer.concat "\n  <!-- "
+; @output_buffer.concat(( render :partial => "form", :object => f ).to_s); @output_buffer.concat " -->\n  "
+; @output_buffer.concat(( f.submit "Update" ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n<br />"
+
+; @output_buffer.concat(( link_to "My Profile", account_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:13:in `compile!'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:61:in `compile'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/renderable.rb:28:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/template.rb:205:in `render_template'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:265:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:348:in `_render_with_layout'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_view/base.rb:262:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1252:in `render_for_file'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:936:in `render_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:51:in `render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1328:in `default_render'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/session/cookie_store.rb:99:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:114:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/reloader.rb:34:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:108:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/static.rb:31:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/rails/rack/log_tailer.rb:17:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:159:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `each'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:158:in `process_client'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:285:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `initialize'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `new'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mingw32/lib/mongrel.rb:268:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/gems/1.8/gems/rails-2.3.11/lib/commands/server.rb:111
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+D:/Program Files/BitNami RubyStack/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tASSOC, expecting '}'
+;  label{:for =>"user_email"} Email = f.user_e...
+                ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: syntax error, unexpected tCONSTANT, expecting kEND
+...bel{:for =>"user_email"} Email = f.user_email :email ; @outp...
+                              ^
+D:/Development/Ruby/spark2fitbit/app/views/users/edit.html.erb:5: dynamic constant assignment
+...l{:for =>"user_email"} Email = f.user_email :email ; @output...
+                              ^) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <% label{:for =>"user_email"} Email = f.user_email :email %>
+6:   <!-- <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:13:in `compile!'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:52:49) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:52:49', `perishable_token` = '0PlzmUO9Wd6RbsBrzGE', `last_request_at` = '2011-09-27 03:52:49' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `user_email' for #<ActionView::Helpers::FormBuilder:0x6d45500>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= label_tag(f.user_email,"Email") %>
+6:   <!-- <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 20:53:34) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 03:53:34', `perishable_token` = 'Ua2kNHU6CntEJmlwNFie', `last_request_at` = '2011-09-27 03:53:34' WHERE `id` = 1[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.0ms)
+Completed in 38ms (View: 8, DB: 15) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:14:20) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:14:20', `perishable_token` = 'F9nPXLWg804I6M76vKtu', `last_request_at` = '2011-09-27 04:14:20' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `user_email' for #<ActionView::Helpers::FormBuilder:0x6d43b98>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.user_email :user_email %>
+6:   <!-- <%= label_tag(:user_email,"Email") %> <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:15:02) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:15:02', `perishable_token` = 'dPYdlTBkIbtcguILQ5R', `last_request_at` = '2011-09-27 04:15:02' WHERE `id` = 1[0m
+  [4;35;1mSQL (70.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LabellingFormBuilder) on line #3 of app/views/users/edit.html.erb:
+1: <h1>Edit My Account</h1>
+2: 
+3: <% form_for @user, :builder=> LabellingFormBuilder, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.user_email :user_email %>
+6:   <!-- <%= label_tag(:user_email,"Email") %> <%= render :partial => "form", :object => f %> -->
+
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:29:59) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:29:59', `perishable_token` = '0VU8YkGHGoQfiK1aDYZJ', `last_request_at` = '2011-09-27 04:29:59' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `text_field_with_label' for #<ActionView::Base:0x6f53778>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= text_field_with_label f, :user_email %>
+6:   <!-- <%= label_tag(:user_email,"Email") %> <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:36:02) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:36:02', `perishable_token` = 'jakNv2s5cLNDOl46hHQs', `last_request_at` = '2011-09-27 04:36:02' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `user_email' for #<ActionView::Helpers::FormBuilder:0x7023d38>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= text_field_tag "user_email", f.user_email %>
+6:   <!-- <%= label_tag(:user_email,"Email") %> <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:36:23) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:36:23', `perishable_token` = 'tj7TKnJ1nC4UjLnmdSw', `last_request_at` = '2011-09-27 04:36:23' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `user_email' for #<ActionView::Helpers::FormBuilder:0x6d5f840>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= text_field_tag("user_email", f.user_email) %>
+6:   <!-- <%= label_tag(:user_email,"Email") %> <%= render :partial => "form", :object => f %> -->
+7:   <%= f.submit "Update" %>
+8: <% end %>
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:36:54) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:36:54', `perishable_token` = 'fX4ZSPTzczFoIwnfJJtH', `last_request_at` = '2011-09-27 04:36:54' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.0ms)
+Completed in 34ms (View: 8, DB: 7) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:37:09) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:37:09', `perishable_token` = 'OVBil7CdpwaGOhple1N', `last_request_at` = '2011-09-27 04:37:09' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 31ms (View: 6, DB: 8) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:37:31) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:37:31', `perishable_token` = '4mvAof5jfH4yhcyDUNg', `last_request_at` = '2011-09-27 04:37:31' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `user_email' for #<User:0x7083720>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= label_tag(:user_email,@user.user_email) %><%= text_field_tag("user_email", "email") %>
+6:   <%= f.submit "Update" %>
+7: <% end %>
+8: 
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:37:51) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:37:51', `perishable_token` = '7tVE8kytgqBQpYXEHlo9', `last_request_at` = '2011-09-27 04:37:51' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 35ms (View: 6, DB: 9) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:38:08) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:38:08', `perishable_token` = 'Z6FjOyHUj8KfbWeb5sYa', `last_request_at` = '2011-09-27 04:38:08' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 32ms (View: 7, DB: 9) | 200 OK [http://localhost/account/edit]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:38:23) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:38:23', `perishable_token` = 's2qVVcA5WG27LGSuqGTv', `last_request_at` = '2011-09-27 04:38:23' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+
+ActionView::TemplateError (undefined method `user_email' for #<ActionView::Helpers::FormBuilder:0x6fa2288>) on line #5 of app/views/users/edit.html.erb:
+2: 
+3: <% form_for @user, :url => account_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= label_tag(:user_email,"Email: ") %><%= text_field_tag("user_email", f.user_email) %>
+6:   <%= f.submit "Update" %>
+7: <% end %>
+8: 
+
+    app/views/users/edit.html.erb:5
+    app/views/users/edit.html.erb:3
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-09-26 21:38:28) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2011-09-27 04:38:28', `perishable_token` = 'k1khAMIwVMjLlz7Tb3Z', `last_request_at` = '2011-09-27 04:38:28' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 32ms (View: 7, DB: 9) | 200 OK [http://localhost/account/edit]

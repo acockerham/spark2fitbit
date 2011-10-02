@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>spark2fitbit</title>
+		<%= stylesheet_link_tag "stylesheet" %>
+	</head>
+<body>
+	<div id='page'>
+		<div id='header' style="float:left;width:100%;border-bottom:2 solid;">
+			<div name="banner" style="float:left;"><%= image_tag("spark2fitbit.jpg") %></div>
+			<div id='spacer' style='float:none;height:50;'></div>
+			<div name="login" style="float:right;">
+				<% if current_user %>
+					<div style="vertical-align:bottom;">Hello, <%=h @user.login %>! <%= link_to "Log off", {:controller=>"user_sessions", :action=>"destroy"}, :method=>"delete"%></div>
+				<% end %>
+			</div>
+		</div>
+		<div name="content">
+		<%= @content_for_layout %>
+		</div>
+	</div>
+</body>
+</html>

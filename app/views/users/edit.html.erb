@@ -2,7 +2,8 @@
 
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
+  <%= label_tag(:user_email,"Email: ") %><%= text_field_tag("user_email", @user.email) %>
+  <!-- To print entire object  <%= render :partial => "form", :object => f %> -->
   <%= f.submit "Update" %>
 <% end %>
 
